@@ -1,6 +1,7 @@
+import { response } from "express";
 import movieModel from "../model/movieModel.js";
 
-export const listmovies = async (req, res)=>{
+export const listMovie = async (req, res)=>{
     try {
         const movies = await movieModel.find({});
 
@@ -58,17 +59,17 @@ export const updateMovie = async (req, res) => {
         if (!response) {
             return res.status(500).json({
                 message: "Movie gagal di update",
-                data: null
+                data: response
             })
         }
         return res.status(200).json({
             message: "Movie berhasil di update",
-            data: null
+            data: response
         })
     } catch (error) {
         res.status(500).json({
-            message: error,
-            data: null
+            message: error.message,
+            data: response
         })
     }
 
@@ -86,7 +87,7 @@ export const detailMovie = async (req, res)=>{
     const movie = await movieModel.findById(id);
     if(!movie){
         return res.status(404).json({
-            message: "Movie tidak ditemiukan",
+            message: "Movie tidak ditemukan",
             data: null,
         })
     }
@@ -108,7 +109,7 @@ export const deleteMovie = async (req, res)=>{
 
         if(!id){
             return res.status (400).json({
-                message : "ID movie wajid di isi",
+                message : "ID movie wajib di isi",
                 data : null,
             })
         }
