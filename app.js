@@ -2,6 +2,10 @@ import express from "express";
 import api from "./route/api.js";
 import database from "./config/database.js"
 import cors from "cors"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68724bb125ce678d2efba24fd621b739483a8e95
 
 const app = express()
 

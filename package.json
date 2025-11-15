@@ -14,9 +14,13 @@
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "mongoose": "^8.19.4",
+<<<<<<< HEAD
     "passport": "^0.7.0"
+=======
+    "moongose": "^1.0.0"
+>>>>>>> 68724bb125ce678d2efba24fd621b739483a8e95
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.11"
   }
 }
